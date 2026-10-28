@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data: ARMD is downloaded separately and everything derived from it is rebuilt by run_all.py
+data/armd_stanford/*
+data/armd_mgb/*
+data/processed/
+data/processed_external/
+data/predictions/
+!data/armd_stanford/.gitkeep
+!data/armd_mgb/.gitkeep
+
+# Logs and local config
+logs/
+*.log
+.streamlit/secrets.toml
+.env
+
+# OS and editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

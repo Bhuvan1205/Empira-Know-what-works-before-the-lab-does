@@ -1,0 +1,11 @@
+antibiotic,n,top1,top2,top3,top4,top5
+ciprofloxacin,602,Antibiotic (0.245),Earlier resistance to ciprofloxacin (0.239),Last tested for this antibiotic (0.193),Age band (0 = 18-24 ... 8 = 90+) (0.175),Last resistant result to this antibiotic (0.154)
+gentamicin,634,Last tested for this antibiotic (0.225),Antibiotic (0.172),Last resistant result to this antibiotic (0.123),Earlier resistance to gentamicin (0.115),Earlier exposure to fluoroquinolone (0.078)
+trimethoprim/sulfamethoxazole,595,Antibiotic (0.540),Last resistant result to this antibiotic (0.308),Last tested for this antibiotic (0.267),Earlier exposure to combination antibiotic (0.135),Specimen (0.128)
+levofloxacin,498,Antibiotic (0.246),Last tested for this antibiotic (0.202),Last resistant result to this antibiotic (0.176),Age band (0 = 18-24 ... 8 = 90+) (0.166),Earlier resistance to levofloxacin (0.156)
+ampicillin,544,Antibiotic (1.101),Last tested for this antibiotic (0.198),Last resistant result to this antibiotic (0.188),Earlier resistance to this antibiotic (registry table) (0.157),Earlier resistance to ampicillin (0.142)
+nitrofurantoin,538,Last tested for this antibiotic (0.189),Age band (0 = 18-24 ... 8 = 90+) (0.165),Last resistant result to this antibiotic (0.113),Earlier infection with escherichia (0.112),Earlier resistance to nitrofurantoin (0.106)
+piperacillin/tazobactam,583,Antibiotic (0.843),Earlier exposure to beta lactam (0.140),Last tested for this antibiotic (0.127),Last resistant result to this antibiotic (0.125),Earlier infection with escherichia (0.058)
+cefazolin,519,Antibiotic (0.420),Last tested for this antibiotic (0.208),Last resistant result to this antibiotic (0.147),Age band (0 = 18-24 ... 8 = 90+) (0.143),Specimen (0.124)
+ceftriaxone,575,Last tested for this antibiotic (0.236),Last resistant result to this antibiotic (0.191),Age band (0 = 18-24 ... 8 = 90+) (0.105),Inpatient ward (0.090),Number of earlier resistant results to this antibiotic (0.075)
+meropenem,595,Antibiotic (2.134),Specimen (0.343),Last tested for this antibiotic (0.157),Sex code (0.128),Last resistant result to this antibiotic (0.097)

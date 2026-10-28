@@ -1,0 +1,75 @@
+{
+  "components": [
+    "per_ab_nolabs_all",
+    "shared_t1"
+  ],
+  "combine": "mean of probabilities, then per-antibiotic logistic recalibration (fit on 2021 validation)",
+  "selected_on": "2021 validation",
+  "antibiotics": [
+    "amikacin",
+    "amoxicillin/clavulanic acid",
+    "ampicillin",
+    "ampicillin/sulbactam",
+    "aztreonam",
+    "cefazolin",
+    "cefepime",
+    "cefoxitin",
+    "ceftazidime",
+    "ceftriaxone",
+    "ciprofloxacin",
+    "clindamycin",
+    "ertapenem",
+    "erythromycin",
+    "gentamicin",
+    "imipenem",
+    "levofloxacin",
+    "linezolid",
+    "meropenem",
+    "moxifloxacin",
+    "nitrofurantoin",
+    "oxacillin",
+    "penicillin",
+    "piperacillin/tazobactam",
+    "tetracycline",
+    "tobramycin",
+    "trimethoprim/sulfamethoxazole",
+    "vancomycin"
+  ],
+  "states": {
+    "shared_t1": {
+      "iters": 319,
+      "best_iter": 219,
+      "best_auc": 0.8654145647936501,
+      "done": true,
+      "params": {
+        "objective": "binary",
+        "learning_rate": 0.05,
+        "num_leaves": 127,
+        "min_data_in_leaf": 200,
+        "feature_fraction": 0.7,
+        "bagging_fraction": 0.7,
+        "bagging_freq": 1,
+        "lambda_l2": 1.0,
+        "max_bin": 63,
+        "metric": "auc",
+        "seed": 7,
+        "verbose": -1,
+        "num_threads": 2
+      },
+      "labs": false
+    }
+  },
+  "versions": {
+    "python": "3.10.12",
+    "lightgbm": "4.7.0",
+    "pandas": "2.3.3",
+    "numpy": "2.2.6",
+    "scikit_learn": "1.7.2"
+  },
+  "val_mean_auroc": 0.8027,
+  "test_mean_auroc": 0.7795,
+  "test_mean_auroc_top10": 0.761,
+  "test_mean_auprc": 0.4543,
+  "test_mean_brier": 0.0948,
+  "test_mean_newpat_auroc": 0.7482
+}

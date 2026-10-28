@@ -1,0 +1,9 @@
+{
+  "name": "per_ab_orgprob_all",
+  "val_mean_auroc_top10": 0.7703,
+  "test_mean_auroc_top10": 0.7571,
+  "val_mean_brier_top10": 0.0981,
+  "test_mean_brier_top10": 0.0988,
+  "test_mean_auroc_all": 0.7731,
+  "n_antibiotics_all": 28
+}

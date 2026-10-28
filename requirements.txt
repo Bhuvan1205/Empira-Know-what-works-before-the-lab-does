@@ -1,0 +1,7 @@
+# Versions used to build and seal release v1.0 (Python 3.10.12)
+pandas==2.3.3
+numpy==2.2.6
+pyarrow==25.0.1
+lightgbm==4.7.0
+scikit-learn==1.7.2
+matplotlib==3.10.9

@@ -1,0 +1,9 @@
+{
+  "name": "shared_nolabs",
+  "val_mean_auroc_top10": 0.7662,
+  "test_mean_auroc_top10": 0.7572,
+  "val_mean_brier_top10": 0.0977,
+  "test_mean_brier_top10": 0.0983,
+  "test_mean_auroc_all": 0.7734,
+  "n_antibiotics_all": 28
+}

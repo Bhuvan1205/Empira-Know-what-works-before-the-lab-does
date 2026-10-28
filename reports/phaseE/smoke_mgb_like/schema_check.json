@@ -1,0 +1,16 @@
+{
+  "required": {
+    "microbiology_cultures_cohort.csv": "ok",
+    "microbiology_cultures_demographics.csv": "ok"
+  },
+  "optional": {
+    "microbiology_cultures_ward_info.csv": "ok",
+    "microbiology_cultures_adi_scores.csv": "MISSING",
+    "microbiology_cultures_nursing_home_visits.csv": "ok",
+    "microbiology_cultures_microbial_resistance.csv": "ok",
+    "microbiology_culture_prior_infecting_organism.csv": "ok",
+    "microbiology_cultures_antibiotic_class_exposure.csv": "ok",
+    "microbiology_cultures_priorprocedures.csv": "ok"
+  },
+  "ok": true
+}

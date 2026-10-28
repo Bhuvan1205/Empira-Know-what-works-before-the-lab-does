@@ -1,0 +1,9 @@
+{
+  "name": "per_ab_nolabs",
+  "val_mean_auroc_top10": 0.7702,
+  "test_mean_auroc_top10": 0.7569,
+  "val_mean_brier_top10": 0.0978,
+  "test_mean_brier_top10": 0.0985,
+  "test_mean_auroc_all": 0.7569,
+  "n_antibiotics_all": 10
+}

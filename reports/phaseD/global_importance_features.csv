@@ -1,0 +1,91 @@
+,mean_abs_shap,family,description
+ab_cat,0.7553,Specimen type / antibiotic,Antibiotic
+own_lastTested_days,0.2258,Patient's prior resistance to THIS antibiotic,Last tested for this antibiotic
+own_lastR_days,0.1743,Patient's prior resistance to THIS antibiotic,Last resistant result to this antibiotic
+culture_type,0.1294,Specimen type / antibiotic,Specimen
+age_ord,0.0825,Age / sex,Age band (0 = 18-24 ... 8 = 90+)
+gender,0.0764,Age / sex,Sex code
+hosp_ward_IP,0.0693,Care setting,Inpatient ward
+own_nR,0.068,Patient's prior resistance to THIS antibiotic,Number of earlier resistant results to this antibiotic
+priorOrg_escherichia,0.061,Patient's prior organisms,Earlier infection with escherichia
+abx_fluoroquinolone,0.0591,Prior antibiotic exposure,Earlier exposure to fluoroquinolone
+priorR_ciprofloxacin,0.0581,Patient's prior resistance to other antibiotics,Earlier resistance to ciprofloxacin
+abx_beta_lactam,0.0567,Prior antibiotic exposure,Earlier exposure to beta lactam
+priorR_target_days,0.0547,Patient's prior resistance to THIS antibiotic,Earlier resistance to this antibiotic (registry table)
+priorOrg_n_events,0.0534,Patient's prior organisms,Earlier positive cultures
+abx_n_types_90d,0.0476,Prior antibiotic exposure,Antibiotic classes in last 90 days
+abx_macrolide_lincosamide,0.042,Prior antibiotic exposure,Earlier exposure to macrolide lincosamide
+abx_nitrofuran,0.0347,Prior antibiotic exposure,Earlier exposure to nitrofuran
+abx_combination_antibiotic,0.0326,Prior antibiotic exposure,Earlier exposure to combination antibiotic
+hosp_ward_ER,0.0307,Care setting,Emergency department
+adi_score,0.0307,Neighbourhood deprivation (ADI),ADI percentile
+priorR_levofloxacin,0.0238,Patient's prior resistance to other antibiotics,Earlier resistance to levofloxacin
+priorR_target_n,0.0226,Patient's prior resistance to THIS antibiotic,Earlier resistant results (registry table)
+proc_surgical_procedure,0.0216,Prior procedures / devices,Earlier procedure
+priorR_cefazolin,0.0196,Patient's prior resistance to other antibiotics,Earlier resistance to cefazolin
+priorR_ampicillin,0.0195,Patient's prior resistance to other antibiotics,Earlier resistance to ampicillin
+proc_cvc,0.0171,Prior procedures / devices,Earlier procedure
+priorR_gentamicin,0.0171,Patient's prior resistance to other antibiotics,Earlier resistance to gentamicin
+abx_n_events,0.0167,Prior antibiotic exposure,Earlier antibiotic courses
+ordering_mode,0.0156,Care setting,Ordered as
+priorR_nitrofurantoin,0.0156,Patient's prior resistance to other antibiotics,Earlier resistance to nitrofurantoin
+priorR_n_events,0.0143,Patient's prior resistance to other antibiotics,Earlier resistant results (all drugs)
+priorR_cefepime,0.0143,Patient's prior resistance to other antibiotics,Earlier resistance to cefepime
+priorOrg_pseudomonas,0.0137,Patient's prior organisms,Earlier infection with pseudomonas
+proc_mechvent,0.0134,Prior procedures / devices,Earlier procedure
+priorOrg_staphylococcus,0.0133,Patient's prior organisms,Earlier infection with staphylococcus
+adi_state_rank,0.0132,Neighbourhood deprivation (ADI),ADI state decile
+abx_nitroimidazole,0.0124,Prior antibiotic exposure,Earlier exposure to nitroimidazole
+priorR_ceftazidime,0.0119,Patient's prior resistance to other antibiotics,Earlier resistance to ceftazidime
+priorR_amikacin,0.0116,Patient's prior resistance to other antibiotics,Earlier resistance to amikacin
+proc_n_events,0.0104,Prior procedures / devices,Earlier procedures
+abx_tetracycline,0.0102,Prior antibiotic exposure,Earlier exposure to tetracycline
+priorOrg_klebsiella,0.0099,Patient's prior organisms,Earlier infection with klebsiella
+priorR_cefoxitin,0.0095,Patient's prior resistance to other antibiotics,Earlier resistance to cefoxitin
+proc_n_types_90d,0.0093,Prior procedures / devices,Procedure types in last 90 days
+priorOrg_enterococcus,0.0089,Patient's prior organisms,Earlier infection with enterococcus
+proc_urethral_catheter,0.0086,Prior procedures / devices,Earlier procedure
+abx_glycopeptide,0.0084,Prior antibiotic exposure,Earlier exposure to glycopeptide
+priorR_meropenem,0.0081,Patient's prior resistance to other antibiotics,Earlier resistance to meropenem
+priorR_ceftriaxone,0.008,Patient's prior resistance to other antibiotics,Earlier resistance to ceftriaxone
+hosp_ward_OP,0.0076,Care setting,Outpatient
+priorR_erythromycin,0.0073,Patient's prior resistance to other antibiotics,Earlier resistance to erythromycin
+abx_ansamycin,0.007,Prior antibiotic exposure,Earlier exposure to ansamycin
+proc_dialysis,0.0053,Prior procedures / devices,Earlier procedure
+priorR_penicillin,0.0051,Patient's prior resistance to other antibiotics,Earlier resistance to penicillin
+priorR_n_types_90d,0.0051,Patient's prior resistance to other antibiotics,Drugs with resistance in last 90 days
+priorR_moxifloxacin,0.005,Patient's prior resistance to other antibiotics,Earlier resistance to moxifloxacin
+nursing_home,0.0047,Care setting,Nursing-home contact
+priorOrg_proteus,0.0045,Patient's prior organisms,Earlier infection with proteus
+hosp_ward_ICU,0.0044,Care setting,ICU
+abx_aminoglycoside,0.0042,Prior antibiotic exposure,Earlier exposure to aminoglycoside
+priorOrg_n_types_90d,0.0035,Patient's prior organisms,Organisms in last 90 days
+abx_oxazolidinone,0.0033,Prior antibiotic exposure,Earlier exposure to oxazolidinone
+priorOrg_streptococcus,0.003,Patient's prior organisms,Earlier infection with streptococcus
+priorOrg_candida,0.0026,Patient's prior organisms,Earlier infection with candida
+priorOrg_citrobacter,0.0019,Patient's prior organisms,Earlier infection with citrobacter
+priorOrg_enterobacter,0.0019,Patient's prior organisms,Earlier infection with enterobacter
+priorOrg_serratia,0.0019,Patient's prior organisms,Earlier infection with serratia
+abx_urinary_antiseptic,0.0018,Prior antibiotic exposure,Earlier exposure to urinary antiseptic
+proc_parenteral_nutrition,0.0018,Prior procedures / devices,Earlier procedure
+abx_antitubercular,0.0015,Prior antibiotic exposure,Earlier exposure to antitubercular
+abx_folate_synthesis_inhibitor,0.0015,Prior antibiotic exposure,Earlier exposure to folate synthesis inhibitor
+priorR_vancomycin,0.0015,Patient's prior resistance to other antibiotics,Earlier resistance to vancomycin
+priorOrg_stenotrophomonas,0.0014,Patient's prior organisms,Earlier infection with stenotrophomonas
+priorOrg_cons,0.0013,Patient's prior organisms,Earlier infection with cons
+priorOrg_morganella,0.0012,Patient's prior organisms,Earlier infection with morganella
+abx_sulfonamide,0.0012,Prior antibiotic exposure,Earlier exposure to sulfonamide
+abx_monobactam,0.0012,Prior antibiotic exposure,Earlier exposure to monobactam
+priorR_ertapenem,0.0011,Patient's prior resistance to other antibiotics,Earlier resistance to ertapenem
+abx_fosfomycin,0.001,Prior antibiotic exposure,Earlier exposure to fosfomycin
+priorR_linezolid,0.0006,Patient's prior resistance to other antibiotics,Earlier resistance to linezolid
+priorR_rifampin,0.0005,Patient's prior resistance to other antibiotics,Earlier resistance to rifampin
+priorOrg_providencia,0.0004,Patient's prior organisms,Earlier infection with providencia
+abx_polymyxin__lipopeptide,0.0004,Prior antibiotic exposure,Earlier exposure to polymyxin  lipopeptide
+priorR_minocycline,0.0004,Patient's prior resistance to other antibiotics,Earlier resistance to minocycline
+priorR_clarithromycin,0.0003,Patient's prior resistance to other antibiotics,Earlier resistance to clarithromycin
+priorR_colistin,0.0003,Patient's prior resistance to other antibiotics,Earlier resistance to colistin
+priorR_aztreonam,0.0002,Patient's prior resistance to other antibiotics,Earlier resistance to aztreonam
+priorOrg_acinetobacter,0.0002,Patient's prior organisms,Earlier infection with acinetobacter
+priorR_cefpodoxime,0.0,Patient's prior resistance to other antibiotics,Earlier resistance to cefpodoxime
+priorR_metronidazole,0.0,Patient's prior resistance to other antibiotics,Earlier resistance to metronidazole

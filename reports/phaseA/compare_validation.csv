@@ -1,0 +1,4 @@
+model,val_mean_auroc_all,val_mean_auprc_all,val_mean_brier_all,val_mean_auroc_top10
+per_ab_nolabs_all,0.8022,0.4938,0.0931,0.7702
+per_ab_orgprob_all,0.8032,0.4955,0.0945,0.7703
+ensemble,0.8041,0.4986,0.0933,0.7717

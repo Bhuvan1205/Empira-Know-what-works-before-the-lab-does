@@ -1,0 +1,13 @@
+table,rows,time_col,null,min,max,negative_rows,zero_day_rows,zero_day_share,le1_day_share,cultures_covered,coverage,q01,q05,q50,q95,q99,columns,rows_per_culture,mean_null_share,Period_Day,age,gender
+microbiology_cultures_microbial_resistance.csv,2161648,resistant_time_to_culturetime,0.0,1.0,5773.0,0.0,0.0,0.0,0.0005,166537,0.2217,18.0,44.0,757.0,3243.0,4452.0,,,,,,
+microbiology_culture_prior_infecting_organism.csv,1083739,prior_infecting_organism_days_to_culutre,0.0,1.0,5770.0,0.0,0.0,0.0,0.0003,209723,0.2792,15.0,42.0,821.0,3528.0,4666.0,,,,,,
+microbiology_cultures_antibiotic_class_exposure.csv,5402486,time_to_culturetime,0.0,1.0,5748.0,0.0,0.0,0.0,0.0069,484370,0.6449,2.0,20.0,610.0,3096.0,4295.0,,,,,,
+microbiology_cultures_antibiotic_subtype_exposure.csv,5402486,medication_time_to_cultureTime,0.0,1.0,5748.0,0.0,0.0,0.0,0.0069,484370,0.6449,2.0,19.0,609.0,3086.0,4285.0,,,,,,
+microbiology_cultures_prior_med.csv,9823458,medication_time_to_culturetime,0.0,0.0,5748.0,0.0,1034527.0,0.1053,0.1118,575344,0.766,0.0,0.0,441.0,2945.0,4194.0,,,,,,
+microbiology_cultures_priorprocedures.csv,1664615,procedure_time_to_culturetime,0.0,1.0,8181.0,0.0,0.0,0.0,0.0129,251759,0.3352,1.0,7.0,332.0,2842.0,4136.0,,,,,,
+microbiology_cultures_nursing_home_visits.csv,7628,nursing_home_visit_culture,0.0,0.0,207.0,0.0,3819.0,0.5007,0.8831,7369,0.0098,0.0,0.0,0.0,8.0,30.0,,,,,,
+microbiology_cultures_labs.csv,1408677,,,,,,,,,492659,0.6559,,,,,,59.0,2.859,0.5076,{'14': 1408677},,
+microbiology_cultures_vitals.csv,4591374,,,,,,,,,581340,0.774,,,,,,28.0,7.898,0.2787,,,
+microbiology_cultures_demographics.csv,751075,,,,,,,,,751075,1.0,,,,,,5.0,1.0,0.0,,"{'18-24 years': 47509, '25-34 years': 99023, '35-44 years': 93245, '45-54 years': 93033, '55-64 years': 122486, '65-74 years': 130764, '75-84 years': 100915, '85-89 years': 34458, 'above 90': 29642}","{'0': 478814, '1': 272141, 'nan': 120}"
+microbiology_cultures_ward_info.csv,751075,,,,,,,,,751075,1.0,,,,,,8.0,1.0,0.0,,,
+microbiology_cultures_adi_scores.csv,751075,,,,,,,,,751075,1.0,,,,,,6.0,1.0,0.0723,,,

@@ -1,0 +1,10 @@
+,mean_abs_shap
+Specimen type / antibiotic,0.8847
+Patient's prior resistance to THIS antibiotic,0.5454
+Prior antibiotic exposure,0.3437
+Patient's prior resistance to other antibiotics,0.2586
+Patient's prior organisms,0.1841
+Age / sex,0.1589
+Care setting,0.1324
+Prior procedures / devices,0.0875
+Neighbourhood deprivation (ADI),0.0439

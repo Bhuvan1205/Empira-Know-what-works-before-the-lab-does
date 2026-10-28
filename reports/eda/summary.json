@@ -1,0 +1,381 @@
+{
+  "cohort_rows": 2241050,
+  "patients": 283715,
+  "cultures": 751075,
+  "encounters": 574584,
+  "date_range": [
+    "1999-12-02 20:41:00+00:00",
+    "2024-02-02 03:02:00+00:00"
+  ],
+  "exact_duplicate_rows": 0,
+  "culture_type_counts": {
+    "URINE": 375177,
+    "BLOOD": 291365,
+    "RESPIRATORY": 84533
+  },
+  "culture_positive_rate": 0.1601,
+  "culture_positive_rate_by_type": {
+    "BLOOD": 0.0448,
+    "RESPIRATORY": 0.211,
+    "URINE": 0.2383
+  },
+  "ordering_mode": {
+    "Inpatient": 464113,
+    "Outpatient": 275304,
+    "null": 11658
+  },
+  "cultures_by_year": {
+    "1999": 78,
+    "2000": 2738,
+    "2001": 2749,
+    "2002": 2340,
+    "2003": 2259,
+    "2004": 2231,
+    "2005": 2170,
+    "2006": 1946,
+    "2007": 13,
+    "2008": 20292,
+    "2009": 26150,
+    "2010": 27593,
+    "2011": 28513,
+    "2012": 29251,
+    "2013": 31043,
+    "2014": 32556,
+    "2015": 40088,
+    "2016": 47812,
+    "2017": 51838,
+    "2018": 61046,
+    "2019": 64124,
+    "2020": 58042,
+    "2021": 64753,
+    "2022": 71177,
+    "2023": 78343,
+    "2024": 1930
+  },
+  "susceptibility_counts": {
+    "Susceptible": 1289258,
+    "NaN": 634468,
+    "Resistant": 265071,
+    "Intermediate": 47651,
+    "Inconclusive": 2670,
+    "Synergism": 1932
+  },
+  "null_susc_rows": 634468,
+  "null_susc_negative_culture": 630798,
+  "null_susc_positive_culture": 3670,
+  "labelled_pairs": 1601980,
+  "labelled_cultures": 118749,
+  "labelled_patients": 67008,
+  "overall_resistant_rate": 0.1655,
+  "dup_label_keys": 7949,
+  "conflicting_label_keys": 7742,
+  "organisms_per_labelled_culture": {
+    "count": 118749.0,
+    "mean": 1.12,
+    "std": 0.36,
+    "min": 1.0,
+    "25%": 1.0,
+    "50%": 1.0,
+    "75%": 1.0,
+    "max": 7.0
+  },
+  "antibiotics_with_ge_10k_labels": 28,
+  "top10_organisms_share_of_labels": 0.8685,
+  "resistant_rate_by_culture_type": {
+    "BLOOD": 0.1963,
+    "RESPIRATORY": 0.2425,
+    "URINE": 0.1479
+  },
+  "key_pairs": [
+    {
+      "organism": "ESCHERICHIA COLI",
+      "antibiotic": "Ciprofloxacin",
+      "n": 61527,
+      "resistant_rate": 0.2205
+    },
+    {
+      "organism": "ESCHERICHIA COLI",
+      "antibiotic": "Ceftriaxone",
+      "n": 48135,
+      "resistant_rate": 0.1207
+    },
+    {
+      "organism": "ESCHERICHIA COLI",
+      "antibiotic": "Trimethoprim/Sulfamethoxazole",
+      "n": 61576,
+      "resistant_rate": 0.2861
+    },
+    {
+      "organism": "ESCHERICHIA COLI",
+      "antibiotic": "Nitrofurantoin",
+      "n": 57594,
+      "resistant_rate": 0.0168
+    },
+    {
+      "organism": "ESCHERICHIA COLI",
+      "antibiotic": "Cefazolin",
+      "n": 58511,
+      "resistant_rate": 0.1355
+    },
+    {
+      "organism": "ESCHERICHIA COLI",
+      "antibiotic": "Piperacillin/Tazobactam",
+      "n": 54328,
+      "resistant_rate": 0.0191
+    },
+    {
+      "organism": "STAPHYLOCOCCUS AUREUS",
+      "antibiotic": "Oxacillin",
+      "n": 8342,
+      "resistant_rate": 0.1122
+    },
+    {
+      "organism": "STAPHYLOCOCCUS AUREUS",
+      "antibiotic": "Vancomycin",
+      "n": 8414,
+      "resistant_rate": 0.0
+    },
+    {
+      "organism": "STAPHYLOCOCCUS AUREUS",
+      "antibiotic": "Clindamycin",
+      "n": 8126,
+      "resistant_rate": 0.344
+    },
+    {
+      "organism": "KLEBSIELLA PNEUMONIAE",
+      "antibiotic": "Ceftriaxone",
+      "n": 8540,
+      "resistant_rate": 0.0809
+    },
+    {
+      "organism": "KLEBSIELLA PNEUMONIAE",
+      "antibiotic": "Ciprofloxacin",
+      "n": 10391,
+      "resistant_rate": 0.0681
+    },
+    {
+      "organism": "KLEBSIELLA PNEUMONIAE",
+      "antibiotic": "Meropenem",
+      "n": 7599,
+      "resistant_rate": 0.0025
+    }
+  ],
+  "cultures_per_patient": {
+    "median": 2.0,
+    "p90": 5.0,
+    "max": 175,
+    "share_patients_with_repeat_cultures": 0.5383,
+    "share_cultures_from_repeat_patients": 0.8256
+  },
+  "event_tables": [
+    {
+      "table": "microbiology_cultures_microbial_resistance.csv",
+      "rows": 2161648,
+      "time_col": "resistant_time_to_culturetime",
+      "null": 0,
+      "min": 1.0,
+      "max": 5773.0,
+      "negative_rows": 0,
+      "zero_day_rows": 0,
+      "zero_day_share": 0.0,
+      "le1_day_share": 0.0005,
+      "cultures_covered": 166537,
+      "coverage": 0.2217,
+      "q01": 18.0,
+      "q05": 44.0,
+      "q50": 757.0,
+      "q95": 3243.0,
+      "q99": 4452.0
+    },
+    {
+      "table": "microbiology_culture_prior_infecting_organism.csv",
+      "rows": 1083739,
+      "time_col": "prior_infecting_organism_days_to_culutre",
+      "null": 0,
+      "min": 1.0,
+      "max": 5770.0,
+      "negative_rows": 0,
+      "zero_day_rows": 0,
+      "zero_day_share": 0.0,
+      "le1_day_share": 0.0003,
+      "cultures_covered": 209723,
+      "coverage": 0.2792,
+      "q01": 15.0,
+      "q05": 42.0,
+      "q50": 821.0,
+      "q95": 3528.0,
+      "q99": 4666.0
+    },
+    {
+      "table": "microbiology_cultures_antibiotic_class_exposure.csv",
+      "rows": 5402486,
+      "time_col": "time_to_culturetime",
+      "null": 0,
+      "min": 1.0,
+      "max": 5748.0,
+      "negative_rows": 0,
+      "zero_day_rows": 0,
+      "zero_day_share": 0.0,
+      "le1_day_share": 0.0069,
+      "cultures_covered": 484370,
+      "coverage": 0.6449,
+      "q01": 2.0,
+      "q05": 20.0,
+      "q50": 610.0,
+      "q95": 3096.0,
+      "q99": 4295.0
+    },
+    {
+      "table": "microbiology_cultures_antibiotic_subtype_exposure.csv",
+      "rows": 5402486,
+      "time_col": "medication_time_to_cultureTime",
+      "null": 0,
+      "min": 1.0,
+      "max": 5748.0,
+      "negative_rows": 0,
+      "zero_day_rows": 0,
+      "zero_day_share": 0.0,
+      "le1_day_share": 0.0069,
+      "cultures_covered": 484370,
+      "coverage": 0.6449,
+      "q01": 2.0,
+      "q05": 19.0,
+      "q50": 609.0,
+      "q95": 3086.0,
+      "q99": 4285.0
+    },
+    {
+      "table": "microbiology_cultures_prior_med.csv",
+      "rows": 9823458,
+      "time_col": "medication_time_to_culturetime",
+      "null": 0,
+      "min": 0.0,
+      "max": 5748.0,
+      "negative_rows": 0,
+      "zero_day_rows": 1034527,
+      "zero_day_share": 0.1053,
+      "le1_day_share": 0.1118,
+      "cultures_covered": 575344,
+      "coverage": 0.766,
+      "q01": 0.0,
+      "q05": 0.0,
+      "q50": 441.0,
+      "q95": 2945.0,
+      "q99": 4194.0
+    },
+    {
+      "table": "microbiology_cultures_priorprocedures.csv",
+      "rows": 1664615,
+      "time_col": "procedure_time_to_culturetime",
+      "null": 0,
+      "min": 1.0,
+      "max": 8181.0,
+      "negative_rows": 0,
+      "zero_day_rows": 0,
+      "zero_day_share": 0.0,
+      "le1_day_share": 0.0129,
+      "cultures_covered": 251759,
+      "coverage": 0.3352,
+      "q01": 1.0,
+      "q05": 7.0,
+      "q50": 332.0,
+      "q95": 2842.0,
+      "q99": 4136.0
+    },
+    {
+      "table": "microbiology_cultures_nursing_home_visits.csv",
+      "rows": 7628,
+      "time_col": "nursing_home_visit_culture",
+      "null": 0,
+      "min": 0.0,
+      "max": 207.0,
+      "negative_rows": 0,
+      "zero_day_rows": 3819,
+      "zero_day_share": 0.5007,
+      "le1_day_share": 0.8831,
+      "cultures_covered": 7369,
+      "coverage": 0.0098,
+      "q01": 0.0,
+      "q05": 0.0,
+      "q50": 0.0,
+      "q95": 8.0,
+      "q99": 30.0
+    }
+  ],
+  "resistance_rows_le_0d": 0,
+  "resistance_rows_le_1d": 1121,
+  "resistance_rows_le_2d": 2019,
+  "resistance_rows_le_3d": 2584,
+  "resistance_rows_le_7d": 4373,
+  "label_pairs_with_0day_prior_resistance_same_antibiotic": 0,
+  "resistant_rate_when_0day_flag": null,
+  "resistant_rate_without_0day_flag": 0.1655,
+  "resistant_rate_when_prior_resistance_ge1d": 0.4606,
+  "resistant_rate_without_prior_resistance_ge1d": 0.1345,
+  "wide_tables": [
+    {
+      "table": "microbiology_cultures_labs.csv",
+      "rows": 1408677,
+      "columns": 59,
+      "cultures_covered": 492659,
+      "coverage": 0.6559,
+      "rows_per_culture": 2.859,
+      "mean_null_share": 0.5076,
+      "Period_Day": {
+        "14": 1408677
+      }
+    },
+    {
+      "table": "microbiology_cultures_vitals.csv",
+      "rows": 4591374,
+      "columns": 28,
+      "cultures_covered": 581340,
+      "coverage": 0.774,
+      "rows_per_culture": 7.898,
+      "mean_null_share": 0.2787
+    },
+    {
+      "table": "microbiology_cultures_demographics.csv",
+      "rows": 751075,
+      "columns": 5,
+      "cultures_covered": 751075,
+      "coverage": 1.0,
+      "rows_per_culture": 1.0,
+      "mean_null_share": 0.0,
+      "age": {
+        "18-24 years": 47509,
+        "25-34 years": 99023,
+        "35-44 years": 93245,
+        "45-54 years": 93033,
+        "55-64 years": 122486,
+        "65-74 years": 130764,
+        "75-84 years": 100915,
+        "85-89 years": 34458,
+        "above 90": 29642
+      },
+      "gender": {
+        "0": 478814,
+        "1": 272141,
+        "nan": 120
+      }
+    },
+    {
+      "table": "microbiology_cultures_ward_info.csv",
+      "rows": 751075,
+      "columns": 8,
+      "cultures_covered": 751075,
+      "coverage": 1.0,
+      "rows_per_culture": 1.0,
+      "mean_null_share": 0.0
+    },
+    {
+      "table": "microbiology_cultures_adi_scores.csv",
+      "rows": 751075,
+      "columns": 6,
+      "cultures_covered": 751075,
+      "coverage": 1.0,
+      "rows_per_culture": 1.0,
+      "mean_null_share": 0.0723
+    }
+  ]
+}

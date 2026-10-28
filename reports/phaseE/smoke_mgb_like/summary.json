@@ -1,0 +1,11 @@
+{
+  "site": "smoke_mgb_like",
+  "rows": 127820,
+  "antibiotics": 28,
+  "mean_auroc": 0.8323,
+  "mean_auprc": 0.5802,
+  "mean_brier": 0.0894,
+  "median_cal_slope": 1.057,
+  "mean_brier_late_frozen": 0.0914,
+  "mean_brier_late_local_recal": 0.0928
+}

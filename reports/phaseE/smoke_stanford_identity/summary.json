@@ -1,0 +1,11 @@
+{
+  "site": "smoke_stanford_identity",
+  "rows": 317134,
+  "antibiotics": 28,
+  "mean_auroc": 0.7795,
+  "mean_auprc": 0.4543,
+  "mean_brier": 0.0948,
+  "median_cal_slope": 0.98,
+  "mean_brier_late_frozen": 0.0951,
+  "mean_brier_late_local_recal": 0.0949
+}

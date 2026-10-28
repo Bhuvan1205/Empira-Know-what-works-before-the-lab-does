@@ -1,0 +1,14 @@
+{
+  "bootstrap_reps": 1000,
+  "unit": "patient",
+  "mean_auroc_all": 0.7795,
+  "mean_auroc_all_ci": [
+    0.7723,
+    0.7867
+  ],
+  "mean_auroc_top10": 0.761,
+  "mean_auroc_top10_ci": [
+    0.7538,
+    0.7686
+  ]
+}

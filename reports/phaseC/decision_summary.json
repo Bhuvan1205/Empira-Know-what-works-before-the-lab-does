@@ -1,0 +1,136 @@
+{
+  "cohort_val": {
+    "urine_cultures": 7401,
+    "all_candidates_tested": 6229,
+    "with_one_clinician_candidate": 2929
+  },
+  "cohort_test": {
+    "urine_cultures": 17086,
+    "all_candidates_tested": 15188,
+    "with_one_clinician_candidate": 7436
+  },
+  "clinician_val": {
+    "n": 2929,
+    "inappropriate_R": 0.12495732331853875,
+    "inappropriate_NS": 0.15124615909866848,
+    "second_line_or_broad": 0.2516217138955275,
+    "broad": 0.027654489586889725
+  },
+  "clinician_test": {
+    "n": 7436,
+    "inappropriate_R": 0.11807423345884885,
+    "inappropriate_NS": 0.14443249058633675,
+    "second_line_or_broad": 0.23345884884346424,
+    "broad": 0.01506186121570737
+  },
+  "threshold_match_inappropriate": 0.2,
+  "policy_test_at_match_inappropriate": {
+    "n": 7436,
+    "inappropriate_R": 0.11753630984400215,
+    "inappropriate_NS": 0.14591178052716514,
+    "second_line_or_broad": 0.07692307692307693,
+    "broad": 0.027030661646046263
+  },
+  "threshold_match_second_line": 0.15,
+  "policy_test_at_match_second_line": {
+    "n": 7436,
+    "inappropriate_R": 0.07974717590102205,
+    "inappropriate_NS": 0.10771920387305002,
+    "second_line_or_broad": 0.21059709521247982,
+    "broad": 0.05311995696611081
+  },
+  "antibiogram_urine_rates_train": {
+    "nitrofurantoin": 0.1126,
+    "trimethoprim/sulfamethoxazole": 0.2585,
+    "cefazolin": 0.178,
+    "ciprofloxacin": 0.187,
+    "ceftriaxone": 0.116,
+    "piperacillin/tazobactam": 0.0224,
+    "meropenem": 0.0036
+  },
+  "clinician_drug_mix_test": {
+    "nitrofurantoin": 0.367,
+    "cefazolin": 0.306,
+    "ciprofloxacin": 0.132,
+    "trimethoprim/sulfamethoxazole": 0.094,
+    "ceftriaxone": 0.086,
+    "piperacillin/tazobactam": 0.015
+  },
+  "policy_drug_mix_test_at_match_inappropriate": {
+    "nitrofurantoin": 0.388,
+    "trimethoprim/sulfamethoxazole": 0.363,
+    "cefazolin": 0.172,
+    "piperacillin/tazobactam": 0.026,
+    "ceftriaxone": 0.026,
+    "ciprofloxacin": 0.024,
+    "meropenem": 0.001
+  },
+  "policy_drug_mix_test_at_match_second_line": {
+    "nitrofurantoin": 0.363,
+    "cefazolin": 0.293,
+    "trimethoprim/sulfamethoxazole": 0.134,
+    "ceftriaxone": 0.1,
+    "ciprofloxacin": 0.058,
+    "piperacillin/tazobactam": 0.051,
+    "meropenem": 0.002
+  },
+  "clinician_inpatient_nitrofurantoin_share_test": 0.2767,
+  "outpatient_test": {
+    "n": 3166,
+    "clinician": {
+      "n": 3166,
+      "inappropriate_R": 0.11781427668982944,
+      "inappropriate_NS": 0.147820593809223,
+      "second_line_or_broad": 0.16487681617182565,
+      "broad": 0.0009475679090334807
+    },
+    "policy_match_inappropriate": {
+      "n": 3166,
+      "inappropriate_R": 0.08812381554011371,
+      "inappropriate_NS": 0.14845230574857865,
+      "second_line_or_broad": 0.025584333543903978,
+      "broad": 0.009475679090334808
+    },
+    "policy_match_second_line": {
+      "n": 3166,
+      "inappropriate_R": 0.08149084017687934,
+      "inappropriate_NS": 0.13644977890082122,
+      "second_line_or_broad": 0.07233101705622236,
+      "broad": 0.01958307012002527
+    }
+  },
+  "diff_policy_minus_clinician_match_inappropriate": {
+    "inappropriate_R": [
+      -0.0005,
+      -0.0093,
+      0.0079
+    ],
+    "inappropriate_NS": [
+      0.0015,
+      -0.0077,
+      0.0105
+    ],
+    "second_line_or_broad": [
+      -0.1565,
+      -0.1673,
+      -0.146
+    ]
+  },
+  "diff_policy_minus_clinician_match_second_line": {
+    "inappropriate_R": [
+      -0.0383,
+      -0.0457,
+      -0.0309
+    ],
+    "inappropriate_NS": [
+      -0.0367,
+      -0.0448,
+      -0.0288
+    ],
+    "second_line_or_broad": [
+      -0.0229,
+      -0.0358,
+      -0.0104
+    ]
+  }
+}
