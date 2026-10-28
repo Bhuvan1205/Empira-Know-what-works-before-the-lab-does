@@ -1,7 +1,5 @@
-# Demo app (on top of the project's requirements.txt)
+# Empira API (on top of the project's requirements.txt). The web app in app/web needs no packages.
 fastapi==0.115.14
 uvicorn[standard]>=0.30
-streamlit==1.65.0
-requests>=2.31
 pytest>=8          # only for the API tests
 httpx>=0.27        # only for the API tests

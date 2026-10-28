@@ -1,6 +1,6 @@
 # Release v1.0, sealed 14 Oct 2026
 
-**Scope:** Phases A–F complete, plus the Empira demo (FastAPI backend and Streamlit app in `app/`). Phase E is pipeline-complete and tested; it awaits ARMD-MGB data.
+**Scope:** Phases A–F complete, plus the Empira demo (FastAPI backend and single-screen web app in `app/`). Phase E is pipeline-complete and tested; it awaits ARMD-MGB data.
 
 **Sealed artefacts:**
 - `models/`: 33 files, checksums in `models/SHA256SUMS`;

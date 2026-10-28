@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Empira</title>
+<meta name="description" content="Chance of antibiotic resistance for a new culture, from the patient's history.">
+<link rel="icon" href="assets/brand/empira-favicon-64.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./" aria-label="Empira home">
+    <img src="assets/brand/empira-mark.svg" alt="" width="28" height="28">
+    <span>Empira</span>
+  </a>
+  <div class="topbar-actions">
+    <div class="menu-wrap">
+      <button class="btn btn-quiet" id="casesBtn" aria-haspopup="true" aria-expanded="false" aria-controls="casesMenu">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4h12v12H4z M7 8h6 M7 11h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Past cases
+      </button>
+      <div class="menu" id="casesMenu" role="menu" hidden>
+        <p class="menu-intro">Real cultures from 2022–2024 that the model never saw. Each shows the lab’s actual result.</p>
+        <div id="casesList"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="patient" id="patientPanel" aria-labelledby="patientTitle">
+    <div class="panel-head">
+      <h1 id="patientTitle">New patient</h1>
+      <div class="panel-actions">
+        <button class="btn btn-quiet btn-sm" id="exampleBtn" type="button">Load example</button>
+        <button class="btn btn-quiet btn-sm" id="clearBtn" type="button">Clear</button>
+      </div>
+    </div>
+
+    <fieldset class="field">
+      <legend>Sample</legend>
+      <div class="seg" id="specimenSeg" role="radiogroup" aria-label="Sample"></div>
+    </fieldset>
+
+    <fieldset class="field">
+      <legend>Seen in</legend>
+      <div class="seg" id="settingSeg" role="radiogroup" aria-label="Seen in"></div>
+    </fieldset>
+
+    <div class="field">
+      <label for="ageSelect" class="label">Age</label>
+      <div class="select-wrap"><select id="ageSelect"></select></div>
+    </div>
+
+    <div class="field">
+      <label for="historyInput" class="label">History</label>
+      <p class="hint" id="historyHint">Anything from a few days ago or earlier.</p>
+      <div class="combo">
+        <svg class="combo-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M13.2 13.2 17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input id="historyInput" type="text" autocomplete="off" spellcheck="false"
+               placeholder="Search, e.g. cipro, E. coli, catheter"
+               role="combobox" aria-expanded="false" aria-controls="historyList" aria-autocomplete="list" aria-describedby="historyHint">
+        <ul class="combo-list" id="historyList" role="listbox" hidden></ul>
+      </div>
+      <ul class="chips" id="chips" aria-label="Added history"></ul>
+    </div>
+
+    <label class="switch-row">
+      <span>Recent nursing-home stay</span>
+      <input type="checkbox" id="nhToggle" class="switch">
+    </label>
+  </section>
+
+  <section class="patient case-panel" id="casePanel" aria-labelledby="caseTitle" hidden>
+    <div class="panel-head">
+      <h1 id="caseTitle">Past case</h1>
+    </div>
+    <p class="case-meta" id="caseMeta"></p>
+    <ul class="facts" id="caseFacts"></ul>
+    <p class="case-agree" id="caseAgree"></p>
+    <button class="btn btn-secondary" id="backBtn" type="button">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12 5 7 10l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to new patient
+    </button>
+  </section>
+
+  <section class="answer" id="answer" aria-live="polite" aria-busy="false">
+    <div class="answer-body" id="answerBody">
+      <div class="skeleton" aria-hidden="true"><div></div><div></div><div></div></div>
+    </div>
+  </section>
+</main>
+
+<button class="peek" id="peek" type="button" aria-label="Jump to the result"></button>
+
+<footer class="foot">Research prototype built on past data from one US hospital. Not for treating patients.</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -19,7 +19,6 @@ data/predictions/
 # Logs and local config
 logs/
 *.log
-.streamlit/secrets.toml
 .env
 
 # OS and editors

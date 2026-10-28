@@ -1,14 +1,14 @@
-<p align="center"><img src="app/frontend/static/brand/empira-logo-light.png" alt="Empira" width="360"></p>
+<p align="center"><img src="app/web/assets/brand/empira-logo-light.png" alt="Empira" width="360"></p>
 
 # Empira: antibiotic resistance prediction at culture order
 
 When a urine, blood or respiratory culture is sent, the lab needs 2–3 days to report which antibiotics work, so the first antibiotic is chosen blind. Empira predicts, **at the moment the culture is ordered and from the patient's record alone**, the chance that the germ is resistant to each of 28 antibiotics. For urine samples it also suggests the narrowest antibiotic with a low enough risk.
 
-It was trained and evaluated on the public ARMD-Stanford dataset and ships as a sealed model (v1.0), a FastAPI backend and a Streamlit app.
+It was trained and evaluated on the public ARMD-Stanford dataset and ships as a sealed model (v1.0), a FastAPI backend and a single-screen web app.
 
 > **Research prototype. Not a medical device and not for clinical use.**
 
-![Empira results screen](docs/screenshots/03_results.png)
+![Empira: one screen, the patient on the left and the answer on the right](docs/screenshots/02_example_result.png)
 
 ## Results (test set 2022 – Jan 2024, never used for any choice)
 
@@ -29,6 +29,8 @@ Python 3.10+.
 pip install -r requirements.txt -r app/requirements.txt
 ```
 
+The web app is plain HTML, CSS and JavaScript: no Node.js or build step.
+
 **1. Get the data.** Download ARMD-Stanford from Dryad ([doi:10.5061/dryad.jq2bvq8kp](https://doi.org/10.5061/dryad.jq2bvq8kp)) and put the CSV files in `data/armd_stanford/` (see [`data/README.md`](data/README.md)). The data is not redistributed in this repository.
 
 **2. Build features, predictions and checks** (about 10 minutes on a 4 GB, 2-core laptop):
@@ -44,8 +46,8 @@ The sealed model files are already in `models/`. The default run retrains the tw
 **3. Run the demo:**
 
 ```bash
-uvicorn app.backend.main:app --port 8000               # API, docs at http://localhost:8000/docs
-cd app/frontend && streamlit run streamlit_app.py      # app at http://localhost:8501
+uvicorn app.backend.main:app --port 8000                          # API, docs at http://localhost:8000/docs
+python -m http.server 8501 --bind 127.0.0.1 --directory app/web   # app at http://localhost:8501
 ```
 
 Or `app/run_demo.sh` (macOS/Linux) and `app\run_demo.bat` (Windows). See [`app/README.md`](app/README.md).
@@ -62,7 +64,7 @@ python -m pytest app/backend/tests # 11 API tests
 ```
 app/
   backend/               FastAPI service: main.py (routes), schemas.py, service.py, wording.py, tests/
-  frontend/              Streamlit app: streamlit_app.py, ui.py, views/, static/ (Lexend font, brand assets)
+  web/                   single-screen web app: index.html, styles.css, app.js, assets/ (Lexend font, brand)
   run_demo.sh / .bat     start API + app
 data/                    not tracked; see data/README.md
   armd_stanford/         raw ARMD CSVs (download from Dryad)

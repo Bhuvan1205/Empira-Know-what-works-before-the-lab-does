@@ -1,13 +1,13 @@
-# Empira: antibiotic guidance before the lab is back
+# Empira app
 
-![Empira](frontend/static/brand/empira-logo-light.png)
+![Empira](web/assets/brand/empira-logo-light.png)
 
-Empira is a FastAPI backend and a Streamlit app built on the sealed v1.0 model (`models/`, `src/predictor.py`, `src/demo_api.py`).
+A FastAPI backend and a single-screen web app built on the sealed v1.0 model (`models/`, `src/predictor.py`, `src/demo_api.py`).
 The model itself is untouched; the app only calls it.
 
-![Results screen](../docs/screenshots/03_results.png)
+![Empira](../docs/screenshots/02_example_result.png)
 
-The name comes from *empiric therapy*: choosing an antibiotic before the lab has identified the germ. Brand files: `frontend/static/brand/`. The brand board (`empira-brand-board.png`) shows the logo, sizes and palette.
+The name comes from *empiric therapy*: choosing an antibiotic before the lab has identified the germ. Brand files: `web/assets/brand/`.
 
 ## Run it
 
@@ -24,42 +24,38 @@ Then either:
 Or start the two parts yourself:
 
 ```
-python -m uvicorn app.backend.main:app --port 8000      # the API, from the project folder
-cd app/frontend && python -m streamlit run streamlit_app.py   # the app
+python -m uvicorn app.backend.main:app --port 8000               # the API, from the project folder
+python -m http.server 8501 --bind 127.0.0.1 --directory app/web  # the web app (plain static files)
 ```
 
-Then open:
-- the app at http://localhost:8501
-- the API docs at http://localhost:8000/docs
+Then open the app at http://localhost:8501 (API docs: http://localhost:8000/docs). If the API runs elsewhere, open `http://localhost:8501/?api=http://host:port`.
 
 Needed from the project:
 - `models/`
 - `data/processed/` (cultures, history, labels_agnostic, own_history_long, prior_resistance_long)
-- `data/predictions/final_test.parquet` (for the real cases)
+- `data/predictions/final_test.parquet` (for past cases)
 - `reports/phaseB/bootstrap_summary.json`
 - `reports/phaseC/decision_summary.json`
 
-## What the app does
+## The app
 
-A dark bar across the top holds the logo and three page buttons; on phones the buttons fold into a menu button. A one-line disclaimer sits at the foot of each page. The screens show no technical details; the API is documented separately at `http://localhost:8000/docs`.
+One screen. The patient is on the left; the answer on the right updates as you type, with no submit button.
 
-| Page | For |
-| --- | --- |
-| **Check a patient** | Three steps: the sample (type, where the patient is seen, age group), their history (earlier resistant germs, germs found before, antibiotics taken, catheters and lines; all optional), then check. You get each antibiotic's chance of resistance ("11 in 100"), grouped as likely to work / uncertain / likely resistant, shown as cards. Button groups filter the cards (Works / Uncertain / Resistant / Rarely tested) and each card has a **Why?** button with the top three reasons. For urine you also get a suggested first choice (the narrowest antibiotic with a low enough chance of resistance) and a **Compare urine options** button. Answers are kept while you visit other pages. |
-| **Real cases** | Five real 2022–2024 cultures the model never saw, with the lab's actual results next to each estimate. One is a case the model got wrong. |
-| **How it works** | Key numbers, how it decides, the urine replay against doctors' choices, what it looks at and its limits. |
+- **Patient:** sample (urine, blood, airway), where they are seen, age, and their history. History is one search box: type "cipro", "E. coli" or "catheter" and press Enter; each item becomes a chip with its own "when". Arrow keys, Enter, Escape and Backspace work as expected. Answers are remembered in the browser.
+- **Answer (urine):** the suggested first choice in large type, with a 100-dot picture of how many similar patients had a resistant germ. A switch prefers narrower antibiotics. Below it, any usual option that is likely to fail, then the seven usual urine options narrowest first. Any row opens to show the top reasons. "Show all 28 antibiotics" reveals the rest.
+- **Answer (blood, airway):** no single suggestion (validated for urine only); the antibiotics with the lowest chance of resistance first.
+- **Past cases** (top right): five real 2022–2024 cultures the model never saw, with the lab's actual result on every row, including one the model got wrong.
+- **Phone:** the layout stacks, and a floating bar shows the current answer and jumps to it.
 
 ## Files
 
 ```
 app/backend/            FastAPI service (main.py, service.py, schemas.py, wording.py, tests/)
-app/frontend/
-  streamlit_app.py      entry point: logo and top navigation
-  ui.py                 shared styles, API calls and result components
-  views/                check.py, cases.py, about.py
-  static/               Lexend font (SIL OFL) and brand/ (logo SVG and PNG files, favicon, brand board)
-  .streamlit/config.toml  theme taken from the logo palette
-docs/screenshots/       screenshots and a walkthrough video of the running app (repo root)
+app/web/
+  index.html            the single screen
+  styles.css            layout, colours, type; responsive and reduced-motion aware
+  app.js                state, live API calls, history search, rendering (no framework, no build step)
+  assets/               Lexend variable font (SIL OFL) and brand/ (logo files, favicon, brand board)
 ```
 
 ## API
@@ -99,10 +95,11 @@ They check that:
 
 ## Design notes
 
-- **Wording is for non-specialists:** "11 in 100" instead of probabilities, and brand names next to generic names. Reasons are written as sentences ("A germ from this patient was resistant to Ciprofloxacin about 6 months ago").
-- **Verdict bands:** under 10 in 100 = likely to work, 10–30 = uncertain, over 30 = likely resistant.
-- **Rarely tested drugs** (tested in under 5% of cultures of that sample type) are listed separately as less reliable.
-- **Typeface:** Lexend, designed for readability, bundled under the SIL Open Font License (`frontend/static/OFL.txt`) so it works offline.
-- **Palette:** neutral colours from the logo: slate `#2B3437`, deep sage `#34433F`, sage `#4F6660`, mist `#8C9A92`, stone `#9C9486`, halo `#D7DFD9`, fog `#F4F5F3`. Verdict colours are muted to match: `#5E7F67`, `#A3874F`, `#9E5A5A`.
+- **One decision per screen:** the suggested antibiotic is the only large element; everything else is secondary and collapsed until asked for.
+- **Natural frequencies:** "11 in 100" and a 100-dot picture instead of probabilities, a standard in risk communication.
+- **Colour never carries meaning alone:** every bar has its words ("Likely resistant"); bands are under 10 in 100 = likely to work, 10–30 = uncertain, 30 or more = likely resistant.
+- **Accessible:** keyboard-operable segmented controls and search (ARIA radio group and combobox), visible focus, live region for results, reduced motion respected.
+- **Rarely tested drugs** (under 5% of cultures of that sample type) are marked as less certain.
+- **Typeface:** Lexend (variable), bundled under the SIL Open Font License so it works offline. **Palette:** slate `#1E292C`, sage `#4F6660`, mist `#F3F5F3`; verdict colours `#3F7452`, `#94702A`, `#A14B43`.
 
 Research prototype. Not for clinical use.

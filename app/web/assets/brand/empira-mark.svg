@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Empira">
+  <!-- petri dish -->
+  <circle cx="32" cy="32" r="28.5" fill="#F7F8F6" stroke="#2B3437" stroke-width="3"/>
+  <!-- zone of inhibition: the clear ring where germs cannot grow -->
+  <circle cx="27" cy="36" r="16" fill="#D7DFD9" stroke="#9AA8A0" stroke-width="1.2"/>
+  <!-- antibiotic disc -->
+  <circle cx="27" cy="36" r="6.6" fill="#2B3437"/>
+  <circle cx="27" cy="36" r="2.3" fill="#9AA8A0"/>
+  <!-- colonies growing beyond the zone -->
+  <circle cx="45.2" cy="17.4" r="3.7" fill="#9C9486"/>
+  <circle cx="51.6" cy="26.6" r="2.6" fill="#9C9486"/>
+  <circle cx="39.6" cy="10.9" r="2.0" fill="#9C9486"/>
+  <circle cx="52.3" cy="36.4" r="1.8" fill="#9C9486"/>
+</svg>

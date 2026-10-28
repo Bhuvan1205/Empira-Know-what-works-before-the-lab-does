@@ -370,19 +370,19 @@ Returns `what_it_does`, `trained_on`, `accuracy` (with AUROC and 95% CI), `impac
 
 ## Frontend
 
-The demo UI is a Streamlit 1.65 app (`app/frontend/`) that talks to the API only over HTTP, so it can be swapped for any other client. It shows no technical detail: no endpoints, no raw probabilities, no metrics jargon.
+The UI is one screen of plain HTML, CSS and JavaScript (`app/web/`, no framework, no build step) that talks to the API only over HTTP. Any static server can host it; the demo uses `python -m http.server`. It shows no technical detail: no endpoints, no raw probabilities, no metric names.
 
-| Page | File | What the user does | API calls |
-| --- | --- | --- | --- |
-| Check a patient | `views/check.py` | Three steps: sample (type, setting, age), history (earlier resistance, germs, antibiotics, devices, each with "when"; nursing home), check. "Try an example" fills a realistic patient. | `GET /api/options` (cached), `POST /api/predict` |
-| Real cases | `views/cases.py` | Pick one of five real 2022–2024 cases; see the facts, "How Empira did" and the lab result beside each estimate | `GET /api/cases`, `GET /api/cases/{id}` |
-| How it works | `views/about.py` | Key numbers, how it decides, urine impact table, inputs and limits | `GET /api/model` |
+| Area | What the user does | API calls |
+| --- | --- | --- |
+| Patient (left) | Sample (urine, blood, airway), where seen, age band, and history added through one search box: "cipro", "E. coli", "catheter" → Enter; each item becomes a chip with its own "when". Nursing-home switch. "Load example" and "Clear". | `GET /api/options` once at start |
+| Answer (right) | Updates live, about 180 ms after each change: the suggested first choice with a 100-dot frequency picture, a "Prefer narrower antibiotics" switch, usual options likely to fail, the seven urine options narrowest first; any row opens to its top reasons; "Show all 28 antibiotics" reveals the rest. Blood and airway samples show the lowest-risk antibiotics instead of one suggestion. | `POST /api/predict` (previous request cancelled on each change) |
+| Past cases (header menu) | Five real 2022–2024 cultures, each row showing the lab's actual result; "Back to new patient" returns to the form | `GET /api/cases`, `GET /api/cases/{id}?choice_mode=` |
 
-**Shared components** (`ui.py`): the dark suggested-first-choice card with a "Compare urine options" popover; antibiotic cards (name, "N in 100 resistant", bar, lab badge, "Why?" popover with the reasons); filter buttons Works / Uncertain / Resistant / Rarely tested with counts; cached GET helper; a friendly "Empira is not available right now" screen if the API is down.
+**Interaction details.** Segmented controls are ARIA radio groups (arrow keys move); history search is an ARIA combobox (arrow keys, Enter, Escape, Backspace removes the last chip); the answer is a live region marked busy while updating. Answers persist in the browser's local storage. On phones the panels stack and a floating bar shows the current suggestion and jumps to it. Reduced-motion settings switch off the one animation (the dots filling in).
 
-**Navigation and look.** `st.navigation(position="top")` puts the logo and three page buttons in a dark top bar; on phones they fold into a menu button. The theme (`.streamlit/config.toml`) uses the Empira palette (slate `#2B3437`, sage `#4F6660`, off-white `#F4F5F3`; verdict colours green `#5E7F67`, amber `#A3874F`, red `#9E5A5A`) and the Lexend font (SIL Open Font License, served from `static/`). Form answers persist across pages through session state.
+**Look.** Lexend variable font (SIL Open Font License, bundled in `app/web/assets/`), slate `#1E292C`, sage `#4F6660`, mist `#F3F5F3`; verdict colours `#3F7452` (likely to work), `#94702A` (uncertain), `#A14B43` (likely resistant), always paired with words.
 
-**Configuration.** `API_URL` (default `http://localhost:8000`) points the UI at the backend.
+**Configuration.** The UI calls `http://<page host>:8000` by default; `?api=http://host:port` in the page URL points it elsewhere. If the API is unreachable the answer area says so and offers a retry.
 
 ## Operations
 
@@ -390,8 +390,8 @@ The demo UI is a Streamlit 1.65 app (`app/frontend/`) that talks to the API only
 
 ```bash
 pip install -r requirements.txt -r app/requirements.txt
-uvicorn app.backend.main:app --port 8000            # API, docs at /docs
-cd app/frontend && streamlit run streamlit_app.py  # UI at http://localhost:8501
+uvicorn app.backend.main:app --port 8000                          # API, docs at /docs
+python -m http.server 8501 --bind 127.0.0.1 --directory app/web   # UI at http://localhost:8501
 ```
 
 `app/run_demo.sh` and `app/run_demo.bat` start both. The API needs `models/` and `data/processed/` (the latter only for real cases); `data/processed/` is rebuilt from the ARMD CSVs by `python run_all.py --only features`.
@@ -425,5 +425,5 @@ cd app/frontend && streamlit run streamlit_app.py  # UI at http://localhost:8501
 - Nateghi Haredasht F, et al., Chen JH. ARMD dataset, Dryad, 2025: [doi:10.5061/dryad.jq2bvq8kp](https://doi.org/10.5061/dryad.jq2bvq8kp)
 - ARMD data descriptor, *Scientific Data*, 2025: [doi:10.1038/s41597-025-05649-7](https://doi.org/10.1038/s41597-025-05649-7)
 - [LightGBM documentation](https://lightgbm.readthedocs.io/)
-- [FastAPI documentation](https://fastapi.tiangolo.com/) · [Streamlit documentation](https://docs.streamlit.io/)
+- [FastAPI documentation](https://fastapi.tiangolo.com/)
 - Project reports 01–07, `models/MODEL_CARD.md` and `RELEASE.md` in the repository
